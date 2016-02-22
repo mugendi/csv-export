@@ -1,6 +1,6 @@
 {
   "name": "csv-export",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create csv from JSON and quickly convert it to downloadable zip file. Works with nested JSON files.",
   "main": "index.js",
   "scripts": {
