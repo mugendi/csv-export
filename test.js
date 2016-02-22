@@ -1,7 +1,7 @@
 
 var csv_export=require('./index.js');
 
-var documents = 
+var documents =
 {
 	food:[
 		    {
