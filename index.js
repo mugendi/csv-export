@@ -6,7 +6,6 @@ var _ = require('lodash');
 
 
 var csv_export={
-	csvObject:{},
 	json2csv: function(object,callback){
 		//
     	converter.json2csv(object,function(err,csv){
@@ -18,7 +17,8 @@ var csv_export={
 
 	},
 	export: function(jsonObj,callback){
-
+		var csvObject = {};
+		
 		//always use as array
 		if(_.isArray(jsonObj)){
 			jsonObj={'all':jsonObj};
@@ -29,7 +29,7 @@ var csv_export={
 			csv_export.json2csv(obj,function(err, csv){
 				if (err) throw err;
 
-				csv_export.csvObject[key+'.csv']=csv;
+				csvObject[key+'.csv']=csv;
 
 				//next index
 				next();
@@ -37,9 +37,9 @@ var csv_export={
 			});
 
 		},function(){
-			// console.log(JSON.stringify(csv_export.csvObject,0,4))
+			// console.log(JSON.stringify(csvObject,0,4))
 			//now export
-			zipFile(function(data){
+			zipFile(csvObject, function(data){
 				callback(data);
 			});
 			//
@@ -50,9 +50,9 @@ var csv_export={
 
 
 
-function zipFile(callback){
+function zipFile(csvObject, callback){
 	//makefile
-	var file = new Ziptree (csv_export.csvObject);
+	var file = new Ziptree (csvObject);
 	var data = file.toBuffer();
 
 	callback(data);
