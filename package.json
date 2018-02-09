@@ -1,6 +1,6 @@
 {
   "name": "csv-export",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Create csv from JSON and quickly convert it to downloadable zip file. Works with nested JSON files.",
   "main": "index.js",
   "scripts": {
@@ -28,5 +28,25 @@
     "lodash": "^3.10.1",
     "path": "^0.11.14",
     "ziptree": "^0.1.0"
-  }
+  },
+  "contributors": [
+    {
+      "name": "Korbin Bickel",
+      "email": null,
+      "url": "https://github.com/leebickmtu",
+      "contributions": 1,
+      "additions": 7,
+      "deletions": 7,
+      "hireable": null
+    },
+    {
+      "name": "Anthony Mugendi",
+      "email": null,
+      "url": "https://github.com/mugendi",
+      "contributions": 2,
+      "additions": 258,
+      "deletions": 0,
+      "hireable": null
+    }
+  ]
 }
